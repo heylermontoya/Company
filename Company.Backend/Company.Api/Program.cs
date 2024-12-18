@@ -47,12 +47,12 @@ public partial class Program
 
         builder.Services.AddDbContext<PersistenceContext>(opt =>
         {
-            opt.UseSqlServer(stringConnection, sqlopts =>
+            opt.UseNpgsql(stringConnection, npgsqlOpts =>
             {
-                sqlopts.MigrationsHistoryTable("_MigrationHistory", config.GetValue<string>("SchemaName"));
+                npgsqlOpts.MigrationsHistoryTable("_MigrationHistory", config.GetValue<string>("SchemaName"));
             });
         });
-
+                
         builder.Services
             .AddHealthChecks();
 

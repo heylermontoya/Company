@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Microsoft.Data.SqlClient;
 using Company.Domain.Exceptions;
 using Company.Domain.Ports;
 using System.ComponentModel;
@@ -65,7 +64,7 @@ namespace Company.Infrastructure.Adapters
 
                 return await _connection.QuerySingleOrDefaultAsync<T>(query, parameters);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw new TimeoutErrorException(ex.Message, ex.InnerException!);
             }

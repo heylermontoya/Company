@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Company.Domain.Ports;
 using Company.Infrastructure.Adapters;
 using System.Data;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 
 namespace Company.Infrastructure.Extensions
 {
@@ -14,7 +14,7 @@ namespace Company.Infrastructure.Extensions
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient(typeof(IQueryWrapper), typeof(DapperWrapper));
             services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
-            services.AddTransient<IDbConnection>(_ => new SqlConnection(stringConnection));
+            services.AddTransient<IDbConnection>(_ => new NpgsqlConnection(stringConnection));
 
             return services;
         }

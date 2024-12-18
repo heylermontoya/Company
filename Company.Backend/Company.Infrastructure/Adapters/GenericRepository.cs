@@ -172,7 +172,7 @@ namespace Company.Infrastructure.Adapters
         public async Task CommitAsync()
         {
             _context.ChangeTracker.DetectChanges();
-            await _context.CommitAsync().ConfigureAwait(false);
+            await _context.SaveChangesAsync().ConfigureAwait(false);
         }
 
         public void Dispose()
