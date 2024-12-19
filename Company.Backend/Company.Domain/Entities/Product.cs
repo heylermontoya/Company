@@ -13,5 +13,7 @@ public partial class Product
 
     public decimal Price { get; set; }
 
+    public bool Isdeleted { get; set; }
+
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }

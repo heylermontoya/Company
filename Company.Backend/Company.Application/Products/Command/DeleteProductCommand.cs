@@ -5,5 +5,5 @@ namespace Company.Application.Products.Command
 {
     public record DeleteProductCommand(
         [Required] int Id
-    ) : IRequest;
+    ) : IRequest<Unit>;
 }

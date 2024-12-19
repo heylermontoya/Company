@@ -40,6 +40,9 @@ public partial class PersistenceContext : DbContext
 
             entity.Property(e => e.Productid).HasColumnName("productid");
             entity.Property(e => e.Inventory).HasColumnName("inventory");
+            entity.Property(e => e.Isdeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("isdeleted");
             entity.Property(e => e.Price)
                 .HasPrecision(10, 2)
                 .HasColumnName("price");

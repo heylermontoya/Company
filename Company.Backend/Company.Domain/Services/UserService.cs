@@ -121,7 +121,7 @@ namespace Company.Domain.Services
 
         private async Task<List<Role>> ValidateRolesAsync(IEnumerable<string> roles)
         {
-            List<Role> listRole = new List<Role>();
+            List<Role> listRole = [];
 
             foreach (string roleName in roles)
             {

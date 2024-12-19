@@ -1,6 +1,12 @@
-﻿using MediatR;
+﻿using Company.Application.DTOs;
+using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace Company.Application.Products.Command
 {
-    public record CreateProductCommand() : IRequest;
+    public record CreateProductCommand(
+        [Required] string ProductName,
+        [Required] int Inventory,
+        [Required] int Price
+    ) : IRequest<ProductDto>;
 }
