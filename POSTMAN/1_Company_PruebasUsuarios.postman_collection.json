@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "542e1d56-8276-4705-94a8-0c50235c6c80",
+		"name": "1_Company_PruebasUsuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18902356"
+	},
+	"item": [
+		{
+			"name": "1_1_CreateUserOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"heylerMontoya\",\r\n  \"email\": \"heylers03@gmail.com\",\r\n  \"passwordHash\": \"12345\",\r\n  \"roles\": [\r\n    \"Admin\",\"Supervisor\",\"Cashier\",\"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/CreateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"CreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_2_CreateUserOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"stivensMontoya\",\r\n  \"email\": \"stivens03@gmail.com\",\r\n  \"passwordHash\": \"12345\",\r\n  \"roles\": [\r\n    \"Admin\",\"Supervisor\",\"Cashier\",\"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/CreateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"CreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_1_CreateUserFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"stivenMontoya\",\r\n  \"email\": \"stivens03@gmail.com\",\r\n  \"passwordHash\": \"12345\",\r\n  \"roles\": [\r\n    \"Customer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/CreateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"CreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_2_CreateUserFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"stivens03@gmail.com\",\r\n  \"passwordHash\": \"12345\",\r\n  \"roles\": [\r\n    \"Customer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/CreateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"CreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_1_UpdateUserOk",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 2,\r\n  \"userName\": \"MontoyaStivens033\",\r\n  \"email\": \"MontoyaStivens033@gmail.com\",\r\n  \"passwordHash\": \"789456\",\r\n  \"roles\": [\r\n    \"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/UpdateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"UpdateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_1_UpdateUserFailed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 99,\r\n  \"userName\": \"MontoyaStivens03\",\r\n  \"email\": \"MontoyaStivens03@gmail.com\",\r\n  \"passwordHash\": \"789456\",\r\n  \"roles\": [\r\n    \"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/UpdateUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"UpdateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5_1_GetUserAllOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/User/GetUsersAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"GetUsersAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_1_GetUserByIdOk",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 2,\r\n  \"userName\": \"MontoyaStivens03\",\r\n  \"email\": \"MontoyaStivens03@gmail.com\",\r\n  \"passwordHash\": \"789456\",\r\n  \"roles\": [\r\n    \"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/GetUserByUserId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"GetUserByUserId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_2_GetUserByIdOk",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 2,\r\n  \"userName\": \"MontoyaStivens03\",\r\n  \"email\": \"MontoyaStivens03@gmail.com\",\r\n  \"passwordHash\": \"789456\",\r\n  \"roles\": [\r\n    \"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/GetUserByUserId/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"GetUserByUserId",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7_1_GetUserByIdFailed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 2,\r\n  \"userName\": \"MontoyaStivens03\",\r\n  \"email\": \"MontoyaStivens03@gmail.com\",\r\n  \"passwordHash\": \"789456\",\r\n  \"roles\": [\r\n    \"Viewer\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/User/GetUserByUserId/99",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"User",
+						"GetUserByUserId",
+						"99"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

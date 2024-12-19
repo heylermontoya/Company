@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "b582cc0f-8de9-4fa0-b698-3d93d461556a",
+		"name": "2_Company_PruebasProductos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18902356"
+	},
+	"item": [
+		{
+			"name": "1_1_CreateProductOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productName\": \"caja 10\",\r\n  \"inventory\": 10,\r\n  \"price\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_2_CreateProductOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productName\": \"caja 5\",\r\n  \"inventory\": 5,\r\n  \"price\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_3_CreateProductOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productName\": \"caja 3\",\r\n  \"inventory\": 3,\r\n  \"price\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_1_CreateProductFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"inventory\": 10,\r\n  \"price\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_2_CreateProductFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"caja 10\",\r\n    \"inventory\": 10,\r\n    \"price\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_3_CreateProductFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"caja 11\",\r\n    \"inventory\": -1,\r\n    \"price\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_4_CreateProductFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"caja 11\",\r\n    \"inventory\": 1,\r\n    \"price\": -10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/CreateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"CreateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_1_UpdateProductOk",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":1,\r\n    \"productName\": \"caja 11\",\r\n    \"inventory\": 11,\r\n    \"price\": 11000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/UpdateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"UpdateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_1_UpdateProductFailed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":99,\r\n    \"productName\": \"caja 11\",\r\n    \"inventory\": 11,\r\n    \"price\": 11000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/UpdateProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"UpdateProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5_1_DeleteProductOk",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/DeleteProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"DeleteProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_1_DeleteProductFailed",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Product/DeleteProducts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"DeleteProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7_1_GetProductAllOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Product/GetProductsAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"GetProductsAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8_1_GetProductByIdOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Product/GetProductByProductId/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"GetProductByProductId",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9_1_GetProductByIdFailed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Product/GetProductByProductId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Product",
+						"GetProductByProductId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

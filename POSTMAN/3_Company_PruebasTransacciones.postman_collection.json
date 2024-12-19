@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "a3b7a3e3-4c4d-4e68-87b6-4f19bb4e1376",
+		"name": "3_Company_PruebasTransacciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18902356"
+	},
+	"item": [
+		{
+			"name": "1_1_CreateTransactionOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 2,\r\n  \"userId\": 1,\r\n  \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/RegisterTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"RegisterTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_2_CreateTransactionOk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 2,\r\n  \"userId\": 1,\r\n  \"quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/RegisterTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"RegisterTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_1_CreateTransactionFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 2,\r\n  \"userId\": 1,\r\n  \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/RegisterTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"RegisterTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_2_CreateTransactionFailed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 2,\r\n  \"userId\": 2,\r\n  \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/RegisterTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"RegisterTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_1_DeleteTransactionOk",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": 1,\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/DeleteTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"DeleteTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_1_DeleteTransactionFailed",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": 99,\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/DeleteTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"DeleteTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_2_DeleteTransactionFailed",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": 2,\r\n  \"userId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/DeleteTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"DeleteTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5_1_GetTransactionsAllOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/GetTransactionsAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"GetTransactionsAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_1_GetTransactionsByProductOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/GetTransactionsByProduct/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"GetTransactionsByProduct",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7_1_GetTransactionsByUserID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/GetTransactionsByUserID/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"GetTransactionsByUserID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8_1_GetTransactionsByUserIDFailed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/GetTransactionsByUserID/99",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"GetTransactionsByUserID",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8_2_GetTransactionsByProductFailed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5443/api/Transaction/GetTransactionsByProduct/99",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5443",
+					"path": [
+						"api",
+						"Transaction",
+						"GetTransactionsByProduct",
+						"99"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

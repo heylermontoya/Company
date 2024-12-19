@@ -37,10 +37,6 @@ out/
 *.err
 *.coverage
 
-# Configuration
-appsettings.json
-appsettings.Development.json
-appsettings.Production.json
 
 # Debugging
 *.log
