@@ -70,6 +70,54 @@ namespace Company.Domain.Services
                 throw new AppException($"Error al crear el usuario: {ex.Message}", ex);
             }
         }
+        
+        public async Task<User> UpdateUserAsync(
+            int userId,
+            string userName,
+            string email,
+            string passwordHash,
+            List<string> roles
+        )
+        {
+            // Validación de roles
+            List<Role> listRole = await ValidateRolesAsync(roles);
+
+            // Validación de usuario duplicado
+            await ValidateDuplicateUserAsync(userName, email);
+
+            // Update usuario
+            User user = await UserRepository.GetByIdAsync(userId);
+            user.Username = userName;
+            user.Email = email;
+            user.Passwordhash = passwordHash;
+            
+
+            // Transacción
+            using TransactionScope scope = new(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {                
+                user = await UserRepository.UpdateAsync(user);
+
+                // Actualizar roles al usuario
+                await UsersInRolepository.DeleteAsync(userInRole => userInRole.Userid == userId);
+                await AssignRolesToUserAsync(user, listRole);
+
+                // Recuperar usuario con roles
+                user = await UserRepository.FindByAlternateKeyAsync(
+                    u => u.Userid == user.Userid,
+                    includeProperties:
+                        $"{nameof(user.Usersinroles)}," +
+                        $"{nameof(user.Usersinroles)}.{nameof(Usersinrole.Role)}"
+                );
+
+                scope.Complete();
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new AppException($"Error al crear el usuario: {ex.Message}", ex);
+            }
+        }
 
         private async Task<List<Role>> ValidateRolesAsync(IEnumerable<string> roles)
         {

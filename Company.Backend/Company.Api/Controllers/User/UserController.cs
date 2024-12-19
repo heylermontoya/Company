@@ -27,11 +27,12 @@ namespace Company.Api.Controllers.User
         }
 
         [HttpPut("UpdateUser")]
-        public async Task UpdateUserAsync(
+        public async Task<IActionResult> UpdateUserAsync(
             UpdateUserCommand command
         )
         {
-            await mediator.Send(command);
-        }        
+            UsertDto usertDto = await mediator.Send(command);
+            return new OkObjectResult(usertDto);
+        }
     }
 }
