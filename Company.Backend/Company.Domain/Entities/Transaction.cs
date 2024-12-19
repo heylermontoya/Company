@@ -13,6 +13,8 @@ public partial class Transaction
 
     public int Quantity { get; set; }
 
+    public bool Isdeleted { get; set; }
+
     public DateTime? Transactiondate { get; set; }
 
     public virtual Product Product { get; set; } = null!;

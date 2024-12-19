@@ -60,6 +60,12 @@ public partial class PersistenceContext : DbContext
             entity.HasIndex(e => e.Rolename, "roles_rolename_key").IsUnique();
 
             entity.Property(e => e.Roleid).HasColumnName("roleid");
+            entity.Property(e => e.Cancreatetransaction)
+                .HasDefaultValue(false)
+                .HasColumnName("cancreatetransaction");
+            entity.Property(e => e.Candeletetransaction)
+                .HasDefaultValue(false)
+                .HasColumnName("candeletetransaction");
             entity.Property(e => e.Rolename)
                 .HasMaxLength(50)
                 .HasColumnName("rolename");
@@ -72,6 +78,9 @@ public partial class PersistenceContext : DbContext
             entity.ToTable("transactions");
 
             entity.Property(e => e.Transactionid).HasColumnName("transactionid");
+            entity.Property(e => e.Isdeleted)
+                .HasDefaultValue(false)
+                .HasColumnName("isdeleted");
             entity.Property(e => e.Productid).HasColumnName("productid");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.Transactiondate)

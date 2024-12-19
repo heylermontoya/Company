@@ -9,5 +9,9 @@ public partial class Role
 
     public string Rolename { get; set; } = null!;
 
+    public bool Cancreatetransaction { get; set; }
+
+    public bool Candeletetransaction { get; set; }
+
     public virtual ICollection<Usersinrole> Usersinroles { get; set; } = new List<Usersinrole>();
 }
