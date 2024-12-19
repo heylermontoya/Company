@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Company.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Company.Infrastructure.Context;

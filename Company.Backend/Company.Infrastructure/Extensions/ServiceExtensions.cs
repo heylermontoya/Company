@@ -11,7 +11,7 @@ namespace Company.Infrastructure.Extensions
                 .Where(assembly =>
                 {
                     return assembly.FullName is not null
-                        && assembly.FullName.Contains("RESERVATION_SYSTEM.Domain", StringComparison.InvariantCulture);
+                        && assembly.FullName.Contains("Company.Domain", StringComparison.InvariantCulture);
                 })
                 .SelectMany(s => s.GetTypes())
                 .Where(p => p.CustomAttributes.Any(x => x.AttributeType == typeof(DomainServiceAttribute)));

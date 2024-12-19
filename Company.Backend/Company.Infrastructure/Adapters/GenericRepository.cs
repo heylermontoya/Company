@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Company.Infrastructure.Adapters
 {
-    public class GenericRepository<E> : IGenericRepository<E> where E : Domain.Entities.Base.DomainEntity
+    public class GenericRepository<E> : IGenericRepository<E> where E : class
     {
         readonly PersistenceContext _context;
 

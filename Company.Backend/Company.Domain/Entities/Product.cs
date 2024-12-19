@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Company.Infrastructure.Context;
+namespace Company.Infrastructure;
 
 public partial class Product
 {

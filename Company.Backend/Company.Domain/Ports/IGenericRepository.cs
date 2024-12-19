@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 namespace Company.Domain.Ports
 {
     public interface IGenericRepository<E> : IDisposable
-        where E : DomainEntity
     {
         Task<IEnumerable<E>> GetAsync(Expression<Func<E, bool>>? filter = null,
                     Func<IQueryable<E>, IOrderedQueryable<E>>? orderBy = null, string includeStringProperties = "",

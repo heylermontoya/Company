@@ -1,4 +1,5 @@
-﻿using Company.Application.Users.Command;
+﻿using Company.Application.DTOs;
+using Company.Application.Users.Command;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +17,13 @@ namespace Company.Api.Controllers.User
         }
         
         [HttpPost("CreateUser")]
-        public async Task CreateUserAsync(
+        public async Task<IActionResult> CreateUserAsync(
             CreateUserCommand command
         )
         {
-            await mediator.Send(command);
+            UsertDto usertDto = await mediator.Send(command);
+
+            return new CreatedResult($"User/{usertDto.UserId}", usertDto);
         }
 
         [HttpPut("UpdateUser")]
