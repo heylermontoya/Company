@@ -10,5 +10,5 @@ namespace Company.Application.Users.Command
         [Required] string Email,
         [Required] string PasswordHash,
         [Required] List<string> Roles
-    ) : IRequest<UsertDto>;
+    ) : IRequest<UserDto>;
 }

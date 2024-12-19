@@ -24,6 +24,30 @@ namespace Company.Domain.Services
             this.RoleRepository = Rolerepository;
         }
 
+        public async Task<List<User>> GetUsersAllAsync()
+        {
+            IEnumerable<User> user = await UserRepository.GetAsync(
+                    includeStringProperties:
+                        $"{nameof(User.Usersinroles)}," +
+                        $"{nameof(User.Usersinroles)}.{nameof(Usersinrole.Role)}"
+                );
+
+            return user.ToList();
+        }
+
+        public async Task<User> GetUserByUserIdAsync(int userId)
+        {
+            User? user = await UserRepository.FindByAlternateKeyAsync(
+                u => u.Userid == userId,
+                includeProperties:
+                    $"{nameof(User.Usersinroles)}," +
+                    $"{nameof(User.Usersinroles)}.{nameof(Usersinrole.Role)}"
+            )
+            ?? throw new AppException($"El usuario con ID {userId} no existe.");
+            
+            return user;
+        }
+
         public async Task<User> CreateUserAsync(
             string userName,
             string email,
@@ -79,14 +103,17 @@ namespace Company.Domain.Services
             List<string> roles
         )
         {
+            // Verificar existencia del user
+            User? user = await UserRepository.GetByIdAsync(userId)
+                ?? throw new AppException($"El usuario con ID {userId} no existe.");
+
             // Validación de roles
             List<Role> listRole = await ValidateRolesAsync(roles);
 
             // Validación de usuario duplicado
             await ValidateDuplicateUserAsync(userName, email);
 
-            // Update usuario
-            User user = await UserRepository.GetByIdAsync(userId);
+            // Update usuario                        
             user.Username = userName;
             user.Email = email;
             user.Passwordhash = passwordHash;

@@ -16,6 +16,25 @@ namespace Company.Domain.Services
             this.ProductRepository = ProductRepository;
         }
 
+        public async Task<List<Product>> GetProductsAllAsync()
+        {
+            IEnumerable<Product> product = await ProductRepository.GetAsync(
+                product => !product.Isdeleted
+            );
+
+            return product.ToList();
+        }
+
+        public async Task<Product> GetProductByProductIdAsync(int productId)
+        {
+            Product? product = await ProductRepository.FindByAlternateKeyAsync(
+                product => product.Productid == productId  && !product.Isdeleted
+            )
+            ?? throw new AppException($"El producto con ID {productId} no existe.");
+
+            return product;
+        }
+
         public async Task<Product> CreateProductAsync(
             string productName,
             int inventory,

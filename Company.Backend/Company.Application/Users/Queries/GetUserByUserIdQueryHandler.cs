@@ -3,24 +3,18 @@ using Company.Domain.Services;
 using Company.Infrastructure;
 using MediatR;
 
-namespace Company.Application.Users.Command
+namespace Company.Application.Users.Queries
 {
-    public class UpdateUserCommandHandler(
+    public class GetUserByUserIdQueryHandler(
         UserService service
-    ) : IRequestHandler<UpdateUserCommand, UserDto>
+    ) : IRequestHandler<GetUserByUserIdQuery, UserDto>
     {
         public async Task<UserDto> Handle(
-            UpdateUserCommand command,
+            GetUserByUserIdQuery query,
             CancellationToken cancellationToken
         )
         {
-            User user = await service.UpdateUserAsync(
-                command.UserId,
-                command.UserName,
-                command.Email,
-                command.PasswordHash,
-                command.Roles
-            );
+            User user = await service.GetUserByUserIdAsync(query.UserId);
 
             List<RoleDto> roles = user.Usersinroles
                 .Select(role => new RoleDto

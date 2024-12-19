@@ -1,6 +1,6 @@
 ﻿namespace Company.Application.DTOs
 {
-    public class UsertDto
+    public class UserDto
     {
         public int UserId { get; set; }
         public string UserName { get; set; } = string.Empty;

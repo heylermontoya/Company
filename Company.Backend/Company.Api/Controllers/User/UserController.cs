@@ -1,5 +1,6 @@
 ﻿using Company.Application.DTOs;
 using Company.Application.Users.Command;
+using Company.Application.Users.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,13 +16,37 @@ namespace Company.Api.Controllers.User
         {
             this.mediator = mediator;
         }
-        
+
+        [HttpGet("GetUsersAll")]
+        public async Task<IActionResult> GetUsersAllAsync()
+        {
+            List<UserDto> listUserDto = await mediator.Send(
+                new GetUsersAllQuery()
+            );
+
+            return new OkObjectResult(listUserDto);
+        }
+
+        [HttpGet("GetUserByUserId/{userId}")]
+        public async Task<IActionResult> GetUserByUserIdAsync(
+            int userId
+        )
+        {
+            UserDto usertDto = await mediator.Send(
+                new GetUserByUserIdQuery(
+                    userId
+                )
+            );
+
+            return new OkObjectResult(usertDto);
+        }
+
         [HttpPost("CreateUser")]
         public async Task<IActionResult> CreateUserAsync(
             CreateUserCommand command
         )
         {
-            UsertDto usertDto = await mediator.Send(command);
+            UserDto usertDto = await mediator.Send(command);
 
             return new CreatedResult($"User/{usertDto.UserId}", usertDto);
         }
@@ -31,7 +56,7 @@ namespace Company.Api.Controllers.User
             UpdateUserCommand command
         )
         {
-            UsertDto usertDto = await mediator.Send(command);
+            UserDto usertDto = await mediator.Send(command);
             return new OkObjectResult(usertDto);
         }
     }

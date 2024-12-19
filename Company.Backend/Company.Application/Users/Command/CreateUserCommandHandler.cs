@@ -7,9 +7,9 @@ namespace Company.Application.Users.Command
 {
     public class CreateUserCommandHandler(
         UserService service
-    ) : IRequestHandler<CreateUserCommand,UsertDto>
+    ) : IRequestHandler<CreateUserCommand, UserDto>
     {
-        public async Task<UsertDto> Handle(
+        public async Task<UserDto> Handle(
             CreateUserCommand command,
             CancellationToken cancellationToken
         )
@@ -29,7 +29,7 @@ namespace Company.Application.Users.Command
                 })
                 .ToList();
 
-            return new UsertDto()
+            return new UserDto()
             {
                 UserId = user.Userid,
                 UserName = user.Username,
