@@ -35,12 +35,12 @@ El **BackEnd** se construyó usando **.NET 8**, aplicando la **arquitectura hexa
 
 ### Descripción Base de Datos y ejecución de Scripts
 
-Para que el sistema funcione, se debe de configurar primero la base de datos, dado que esta diseñada bajo el enfoque DB First, Por lo que se deben segui estos pasos:
+Para que el sistema funcione, se debe de configurar primero la base de datos, dado que la aplicación esta diseñada bajo el enfoque DB First, Por lo que se deben seguir estos pasos:
 
 1. Tener una instancia de **postgres SQL** con un usuario con permisos suficientes para crear bases de datos y tablas.
 2. Ejecutar el script `1_CreateDataBase.sql` para crear la base de datos, el cual esta ubucado en la carpeta `Company/SCRIPTS`
 3. Una Vez creada la base de datos, con nombre `company_heylermontoya`, Asegurarse que los siguientes Queries, se ejecuten sobre la base de datos creada.
-4. Ejecutar el script `2_CreateTablesAndData.sql`, el cual crea todas las tablas e inserta la información base de los roles que maneja la aplicación, Las demas tablas estaran vacias, las cuales se llenan a medida en que se interactua con el sistema.
+4. Ejecutar el script `2_CreateTablesAndData.sql`, el cual crea todas las tablas e inserta la información base de los roles que maneja la aplicación. Las demas tablas estaran vacias, las cuales se llenan a medida en que se interactua con la aplicación.
 
 
 ---
@@ -58,14 +58,14 @@ Para correr el **BackEnd** en **.NET 8**, sigue estos pasos:
       "StringConnection": "Host=localhost;Port=5432;Database=company_heylermontoya;Username=postgres;Password=H3yl3r"
     ```
 
-5. Ejecuta las migraciones de **Entity Framework** para crear la base de datos:
+5. Ejecuta las migraciones de **Entity Framework** para obtener la información de todas las tablas de la base de datos y ser mapeadas e la aplicación en el backend:
 
     a) Instala el CLI de **EF Core**:
     ```bash
     dotnet tool install --global dotnet-ef
     ```
 
-    b) Crea la migración bajo el enfoque de DB First, ubiquese desde la carpeta `Company.Backend/Company.Infrastructure`. Adicional tener en cuenta modificar las credenciales de la conexión a postgres SQL, Ejecutar el siguiente comando base:
+    b) Crea la migración bajo el enfoque de DB First, ubiquese desde la carpeta `Company.Backend/Company.Infrastructure`.  Ejecutar el siguiente comando base, teniendo en cuenta que se debe modificar las credenciales de la conexión a postgres SQL.
     ```bash
     dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Database=Company_HeylerMontoya;Username=postgres;Password=H3yl3r" Npgsql.EntityFrameworkCore.PostgreSQL -o ..\Company.Domain\Entities\ -c PersistenceContext --context-dir .\Context\ --force
     ```
@@ -86,8 +86,16 @@ Para correr el **BackEnd** en **.NET 8**, sigue estos pasos:
 
 Con lo anterior ya deberia de poder ver la aplicacion funcionando correctamente.
 
-Como datos adicionales, a continuacion se muestra la documentacion de la api que se genera con swagger.
+### Datos Adicionales, para validar el funcionamiento de la aplicaión
+
+1. Se muestra la documentacion de la api que se genera con swagger.
 
 
 [ver documentación de la api con swagger](./DocumentationWithSwaggerWebApi/DocumentationWithSwagger.json)
 
+2. Se proporciona 3 colecciones de Postman, para que sea ejecutado desde el equipo donde se ponga en funcionamiento la aplicación. Tener en cuenta que las colecciones de Postman y cada uno de sus Request estan enumerados y ordenados, los cuales se deben de ejecutar en ese orden, para poder validar el funcionamiento de la aplicación.
+
+![Orden Colecciones y Request de Postman](./POSTMAN/OrdenEjecucionColeccionesPostman.jpg)
+
+
+---
