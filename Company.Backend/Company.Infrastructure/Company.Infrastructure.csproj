@@ -20,6 +20,7 @@
 	  <ProjectReference Include="..\Company.Domain\Company.Domain.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Constants\" />
 	  <Folder Include="Context\" />
 	</ItemGroup>
 </Project>
