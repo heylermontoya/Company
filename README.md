@@ -95,6 +95,8 @@ Con lo anterior ya deberia de poder ver la aplicacion funcionando correctamente.
 
 2. Se proporciona 3 colecciones de Postman, para que sea ejecutado desde el equipo donde se ponga en funcionamiento la aplicación. Tener en cuenta que las colecciones de Postman y cada uno de sus Request estan enumerados y ordenados, los cuales se deben de ejecutar en ese orden, para poder validar el funcionamiento de la aplicación.
 
+Las colecciones de Postman, se encuentran en la carpeta `Company/POSTMAN`, las cuales pueden ser importadas en Postman para probar la aplicación.
+
 ![Orden Colecciones y Request de Postman](./POSTMAN/OrdenEjecucionColeccionesPostman.jpg)
 
 
