@@ -67,7 +67,7 @@ Para correr el **BackEnd** en **.NET 8**, sigue estos pasos:
 
     b) Crea la migración bajo el enfoque de DB First, ubiquese desde la carpeta `Company.Backend/Company.Infrastructure`.  Ejecutar el siguiente comando base, teniendo en cuenta que se debe modificar las credenciales de la conexión a postgres SQL.
     ```bash
-    dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Database=Company_HeylerMontoya;Username=postgres;Password=H3yl3r" Npgsql.EntityFrameworkCore.PostgreSQL -o ..\Company.Domain\Entities\ -c PersistenceContext --context-dir .\Context\ --force
+    dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Database=company_heylermontoya;Username=postgres;Password=H3yl3r" Npgsql.EntityFrameworkCore.PostgreSQL -o ..\Company.Domain\Entities\ -c PersistenceContext --context-dir .\Context\ --force
     ```
 
 6. Ejecuta la aplicación con el siguiente comando desde la raíz del proyecto:
