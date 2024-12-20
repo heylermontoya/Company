@@ -3,7 +3,6 @@ using Company.Infrastructure;
 using System.Transactions;
 using Company.Domain.Ports;
 using Transaction = Company.Infrastructure.Transaction;
-using System.Data.Common;
 
 namespace Company.Domain.Services
 {

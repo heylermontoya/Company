@@ -1,5 +1,4 @@
-﻿using Company.Domain.Entities.Base;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace Company.Domain.Ports
 {

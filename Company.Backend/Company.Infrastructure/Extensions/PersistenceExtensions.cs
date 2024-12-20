@@ -12,7 +12,6 @@ namespace Company.Infrastructure.Extensions
         public static IServiceCollection AddPersistence(this IServiceCollection services, string stringConnection)
         {
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddTransient(typeof(IQueryWrapper), typeof(DapperWrapper));
             services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
             services.AddTransient<IDbConnection>(_ => new NpgsqlConnection(stringConnection));
 

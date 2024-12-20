@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Company.Domain.Exceptions;
-using Grpc.Core;
-using System.ComponentModel.DataAnnotations;
 
 namespace Company.Api.Filters
 {
